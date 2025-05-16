@@ -11,11 +11,14 @@ const PORT = process.env.PORT || 8080;
 const MONGO_URI = process.env.MONGO_URI || '';
 
 // 🔓 CORS ni frontend domeni bilan cheklang yoki "*" bilan oching
-app.use(cors({
-  origin: '*', // Agar faqat frontend domen bo‘lsa: 'http://localhost:3000'
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
+const corsOptions = {
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
+
 
 app.use(express.json());
 
