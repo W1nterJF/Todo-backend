@@ -12,12 +12,17 @@ const MONGO_URI = process.env.MONGO_URI || '';
 
 // 🔓 CORS ni frontend domeni bilan cheklang yoki "*" bilan oching
 const corsOptions = {
-  origin: "*",
-  methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
-  credentials: true,
+  origin: [
+    'http://localhost:3000',
+    'https://todo-frontend-one-bay.vercel.app',
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true, // Agar frontend cookie bilan ishlatsa
 };
 
 app.use(cors(corsOptions));
+
 
 
 app.use(express.json());
