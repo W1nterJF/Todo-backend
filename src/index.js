@@ -9,7 +9,7 @@ const dotenv_1 = __importDefault(require("dotenv"));
 const todo_1 = __importDefault(require("./routes/todo"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 const MONGO_URI = process.env.MONGO_URI || '';
 app.use(express_1.default.json());
 mongoose_1.default
