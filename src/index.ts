@@ -10,9 +10,9 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 const MONGO_URI = process.env.MONGO_URI || '';
 
-// 🔓 CORS – barcha domenlarga ruxsat beriladi
+// 🔓 CORS ni frontend domeni bilan cheklang yoki "*" bilan oching
 app.use(cors({
-  origin: '*',
+  origin: '*', // Agar faqat frontend domen bo‘lsa: 'http://localhost:3000'
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
